@@ -1,3 +1,5 @@
+chat-space DB
+
 # messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
