@@ -1,0 +1,27 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group{"data-group_id" => ""}
+        歌広場
+      %ul.main-header__left-box__member-list  
+        Member：            
+        %li.main-header__left-box__member-list__member 
+        ウタヒロ
+    %a{:href => "#"}
+      .main-header__edit-btn Edit
+  .messages
+    .message{"data-message_id" => "#"}
+      .message__upper-info
+        %p.message__upper-info__talker ウタヒロ
+        %p.message__upper-info__date 2019/12/29(Sun) 12:30:38
+      %p.message__text こんにちは
+  .form
+    %form.new_message{"accept-charset" => "UTF-8", :action => "#", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "64VuSNhz0zyIyoJUx+Mxn8TD2Q92eLrnZ/5l2KJoPJ1aQfdTKSbG0H47G96PyTNnzyjllm9ABW/EBFMYTlM/2A=="}/
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.input-box__image{:for => "message_image"}
+          %i.fa.fa-image
+          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
