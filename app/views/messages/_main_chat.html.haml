@@ -2,19 +2,16 @@
   .main-header
     .main-header__left-box
       %h2.main-header__left-box__current-group{"data-group_id" => ""}
-        歌広場
-      %ul.main-header__left-box__member-list  
-        Member：            
+        = @group.name
+      %ul.main-header__left-box__member-list
+        Member：
         %li.main-header__left-box__member-list__member 
-        ウタヒロ
-    %a{:href => "/groups/11895/edit"}
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
+    = link_to edit_group_path(@group) do
       .main-header__edit-btn Edit
   .messages
-    .message{"data-message_id" => "20953"}
-      .message__upper-info
-        %p.message__upper-info__talker ウタヒロ
-        %p.message__upper-info__date 2019/12/29(Sun) 12:30:38
-      %p.message__text こんにちは
+    = render @messages
   .form
     %form.new_message{"accept-charset" => "UTF-8", :action => "#", :enctype => "multipart/form-data", :method => "post"}
       %input{:name => "utf8", :type => "hidden", :value => "✓"}/
