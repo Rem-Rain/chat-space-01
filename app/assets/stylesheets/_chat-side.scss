@@ -3,6 +3,7 @@
   width: 300px;
   float: left;
   background-color: #253141;
+  text-decoration: none;
   .side-header {
     color: $white;
     height: 100px;
@@ -33,16 +34,15 @@
     background-color: #2f3e51;
     padding: 20px;
      .group{
-       color: $white;
        font-weight: bold;
-       text-decoration: none;
        margin-bottom :40px;
-       text
        &__group-name {
+        color: $white;
         font-size: 15px;
         margin-bottom: 5px;
         }
        &__latest-message {
+        color: $white;
         font-size: 11px;
         }
      }
