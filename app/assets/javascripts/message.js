@@ -58,7 +58,7 @@ $(function(){
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .always(function(data){
-      $('.submit-btn').prop('disabled', false);
+      $('.form__submit').prop('disabled', false);
     })
     .fail(function(data){
       alert('エラーが発生したためメッセージは送信できませんでした。');

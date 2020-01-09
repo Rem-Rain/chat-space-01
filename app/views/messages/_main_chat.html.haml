@@ -13,12 +13,10 @@
   .messages
     = render @messages
   .form
-    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "#", :enctype => "multipart/form-data", :method => "post"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "64VuSNhz0zyIyoJUx+Mxn8TD2Q92eLrnZ/5l2KJoPJ1aQfdTKSbG0H47G96PyTNnzyjllm9ABW/EBFMYTlM/2A=="}/
-      .input-box
-        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        %label.input-box__image{:for => "message_image"}
-          %i.fa.fa-image
-          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
