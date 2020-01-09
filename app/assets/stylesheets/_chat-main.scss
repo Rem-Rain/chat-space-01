@@ -8,6 +8,7 @@
     justify-content: space-between;
     position: relative;
     border-bottom: solid 1px #eee;
+    overflow: scroll;
     &__left-box {
       margin-top: 35px;
       &__current-group {
@@ -36,6 +37,7 @@
     height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
+    overflow: scroll;
     .message {
       padding-bottom: 40px;
       &__upper-info {
@@ -56,6 +58,14 @@
         color: #434a54;
         font-size: 14px;
         margin-bottom: 10px;
+        &__content {
+          color: $black;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        &__img{
+          width: 200px;
+        }
       }
     }
   }

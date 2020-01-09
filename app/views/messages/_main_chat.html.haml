@@ -13,7 +13,7 @@
   .messages
     = render @messages
   .form
-    %form.new_message{"accept-charset" => "UTF-8", :action => "#", :enctype => "multipart/form-data", :method => "post"}
+    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "#", :enctype => "multipart/form-data", :method => "post"}
       %input{:name => "utf8", :type => "hidden", :value => "✓"}/
       %input{:name => "authenticity_token", :type => "hidden", :value => "64VuSNhz0zyIyoJUx+Mxn8TD2Q92eLrnZ/5l2KJoPJ1aQfdTKSbG0H47G96PyTNnzyjllm9ABW/EBFMYTlM/2A=="}/
       .input-box
